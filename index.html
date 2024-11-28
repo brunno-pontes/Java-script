@@ -4,32 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto js</title>
+  
     <style>
-        body{
-            background-color: rgba(232, 217, 6, 0.749);
-            color: rgb(255, 255, 255);
-            font: normal 20pt arial;
-        }
-        p{
-            color: black;
-        }
-
+        
     </style>
 </head>
 <body>
     <h1>Olá mundo!</h1>
     <p>Seja bem vindo!</p>
-    
-    <p>Vamos estudar JavaScript</p>
+     <p>Vamos estudar JavaScript</p>
+
+     <div>
+      <p>digite um numero:</p>
+<input type="digite um numero"id="n1">
+<p>digite outro numero:  </p>
+<input type="digite outro numero"id="n2">
+
+
+
+     </div>
     <script>
-       // window.alert('Estudando JavaScript')
-       // window.confirm('Estudando JavaScript')
-        window.prompt('Estudando JavaScript')
-        let n1 = Number(window.prompt('Digite um numero'))
-        let n2 = Number(window.prompt('Digite outro numero'))
-        let s = n1 + n2
-        window.alert(`A soma entre ${n1} e ${n2} e igual a ${s}`)
-        
+  
+       let n1 = (n1.value)
+       let n2 = (n2.value)
+       let res = n1 + n2
+     document.write(`${res}`)
     </script>
 
 </body>

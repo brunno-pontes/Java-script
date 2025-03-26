@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block pesquisa %}
+<form class="d-flex ms-auto " role="search" action="{{url_for('produtos')}}" method="POST">
+    <input class="form-control me-2" type="search"aria-label="Search" name="pesquisa">
+    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+  </form>
+{% endblock %}
+
+ {% block main %} 
+ <div class="container">
+    <br>
+<div class="d-flex justify-content-center">
+    <h1>Lista de produtos</h1>
+</div>
+<hr>
+<div class="row ">
+    {% for produto in produtos %}
+    <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                {{produto.nome}}
+            </div>
+            <img src="{{url_for('static', filename='imagens/' + produto.imagem)}}" class="card-img-top" alt="{{produto.nome}}">
+            <div class="card-body">
+              <p class="card-text">{{produto.descricao}}</p>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Ingredientes:</h6>
+              <p>{{produto.ingredientes}}</p>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Origem:</h6>
+              <p>{{produto.origem}}</p>
+              <a href="{{ url_for('editar_produto', id=produto.id)}}" class="btn btn-primary">Editar</a>
+              <a href="{{ url_for('deletar_produto', id=produto.id)}}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar?')">Deletar</a>
+            </div>
+          </div>
+          <br>
+    </div>
+{%endfor%}
+</div>
+ </div>
+
+ {% endblock %}
